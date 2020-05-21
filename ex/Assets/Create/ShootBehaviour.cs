@@ -181,7 +181,7 @@ public class ShootBehaviour : GenericBehaviour
 			//behaviourManager.GetCamScript.BounceVertical(weapons[weapon].recoilAngle);
 
 			// Cast the shot to find a target.
-			Vector3 imprecision = Random.Range(-shotErrorRate, shotErrorRate) * behaviourManager.playerCamera.right;
+			//Vector3 imprecision = Random.Range(-shotErrorRate, shotErrorRate) * behaviourManager.playerCamera.right;
 			Ray ray = new Ray(gunMuzzle.position, transform.forward);
 			RaycastHit hit = default(RaycastHit);
 			// Target was hit.
@@ -242,7 +242,7 @@ public class ShootBehaviour : GenericBehaviour
 			GameObject instantSparks = Object.Instantiate<GameObject>(sparks);
 			instantSparks.SetActive(true);
 			instantSparks.transform.position = destination;
-			instantSparks.transform.parent = sparks.transform.parent;
+			//instantSparks.transform.parent = sparks.transform.parent;
 		}
 
 		// Put bullet hole on the target.
