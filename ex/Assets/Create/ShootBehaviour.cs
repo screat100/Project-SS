@@ -178,10 +178,9 @@ public class ShootBehaviour : GenericBehaviour
 			burstShotCount++;
 			behaviourManager.GetAnim.SetTrigger(shootingTrigger);
 			aimBehaviour.crosshair = shootCrosshair;
-			//behaviourManager.GetCamScript.BounceVertical(weapons[weapon].recoilAngle);
+			
 
 			// Cast the shot to find a target.
-			//Vector3 imprecision = Random.Range(-shotErrorRate, shotErrorRate) * behaviourManager.playerCamera.right;
 			Ray ray = new Ray(gunMuzzle.position, transform.forward);
 			RaycastHit hit = default(RaycastHit);
 			// Target was hit.
@@ -242,7 +241,6 @@ public class ShootBehaviour : GenericBehaviour
 			GameObject instantSparks = Object.Instantiate<GameObject>(sparks);
 			instantSparks.SetActive(true);
 			instantSparks.transform.position = destination;
-			//instantSparks.transform.parent = sparks.transform.parent;
 		}
 
 		// Put bullet hole on the target.
@@ -325,7 +323,6 @@ public class ShootBehaviour : GenericBehaviour
 				if (activeWeapon > 0)
 				{
 					// Set camera bounce return on recoil end.
-					//behaviourManager.GetCamScript.BounceVertical(-weapons[activeWeapon].recoilAngle * 0.1f);
 
 					// Handle next shot for burst or auto mode.
 					if (shotDecay <= (0.4f - 2 * Time.deltaTime))
@@ -353,7 +350,6 @@ public class ShootBehaviour : GenericBehaviour
 		else
 		{
 			isShotAlive = false;
-			//behaviourManager.GetCamScript.BounceVertical(0);
 			burstShotCount = 0;
 		}
 	}

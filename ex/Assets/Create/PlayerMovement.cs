@@ -60,9 +60,9 @@ public class PlayerMovement : MonoBehaviour
         target = null;
         getTarget();
         Vector3 desiredForward;
- 
         if (target == null)
         {
+
             desiredForward = Vector3.RotateTowards(
                 transform.forward,
                 movement,
@@ -72,6 +72,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             Vector3 direction = target.position - transform.position;
+            direction.y = 0f;
             direction = direction.normalized * (Input.GetKey(KeyCode.LeftShift) ? runSpeed : walkSpeed) * Time.deltaTime;
             desiredForward = Vector3.RotateTowards(
                 transform.forward,
@@ -109,7 +110,7 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
             // Ray검사 통과했다면 ,
-            if(!rayBlocked)
+            if(true)
             {
                 float dist = direction.magnitude;
                 // targetRange안의 Object와, Player의 거리 비교
