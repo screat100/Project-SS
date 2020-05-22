@@ -28,7 +28,7 @@ public class InteractiveWeapon : MonoBehaviour
 	public WeaponMode mode = WeaponMode.SEMI;                 // Default weapon mode, change in Inspector.
 	public int burstSize = 0;                                 // How many shot are fired on burst mode.
 	[SerializeField]
-	private int mag, totalBullets;                            // Current mag capacity and total amount of bullets being carried.
+	private int mag, totalBullets;     // Current mag capacity and total amount of bullets being carried.
 	private int fullMag, maxBullets;                          // Default mag capacity and total bullets for reset purposes.
 	private GameObject player, gameController;                // References to the player and the game controller.
 	private ShootBehaviour playerInventory;                   // Player's inventory to store weapons.
